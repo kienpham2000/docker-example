@@ -1,2 +1,3 @@
 # docker-example
-Docker example
+
+Docker example for Wedbush team
