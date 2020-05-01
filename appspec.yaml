@@ -1,0 +1,15 @@
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:963091685941:task-definition/docker-example:3",
+        LoadBalancerInfo:
+          ContainerName: "docker-example"
+          ContainerPort: 80
+# Optional properties
+      # PlatformVersion: "ecs-service-platform-version"
+      # NetworkConfiguration:
+      #   AwsvpcConfiguration:
+      #     Subnets: ["ecs-subnet-1","ecs-subnet-n"]
+      #     SecurityGroups: ["ecs-security-group-1","ecs-security-group-n"]
+      #     AssignPublicIp: "ENABLED-or-DISABLED"
