@@ -31,10 +31,14 @@ phases:
       # - command
   build:
     commands:
-      - cd docker-compose
-      - docker-compose up -d
-      - curl localhost:5000
-      - echo "build from local buildspec.yml inside code repo"
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_REPO
+      - docker build -t docker-example .
+      - docker tag docker-example:latest $ECR_REPO:latest
+      - docker push $ECR_REPO:latest
+      # - cd docker-compose
+      # - docker-compose up -d
+      # - curl localhost:5000
+      # - echo "build from local buildspec.yml inside code repo"
       # - command
   #post_build:
     #commands:
