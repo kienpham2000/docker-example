@@ -2,7 +2,8 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:963091685941:task-definition/docker-example:3",
+        # TaskDefinition: "arn:aws:ecs:us-east-1:963091685941:task-definition/docker-example:3",
+        TaskDefinition:: <TASK_DEFINITION>
         LoadBalancerInfo:
           ContainerName: "docker-example"
           ContainerPort: 80
